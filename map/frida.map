@@ -1,0 +1,147 @@
+MAP 
+  NAME		"Frida"
+  # EXTENT EPSG:31467 (strassen)
+  EXTENT 	3427000.290000 5787594.240000 3444004.000000 5800876.470000
+  UNITS meters
+  Size		800 800
+  SYMBOLSET	"symbols/symbols.txt"
+  IMAGETYPE	PNG	
+  CONFIG "MS_ERRORFILE" "/tmp/frida_ms_error.txt"
+  STATUS ON
+  DEBUG 5	
+  
+  WEB
+    IMAGEPATH '/tmp/'
+    IMAGEURL '/tmp/'
+
+    METADATA
+      "wfs_title"	"Osnabrueck"
+      "wms_title"	"Osnabrueck"
+      "wms_srs"		"EPSG:31467 EPSG:4326 EPSG:3785 EPSG:3857 EPSG:900913"
+      "wms_enable_request"	"*"	
+    END
+  END
+
+  CONFIG "PROJ_LIB" "epsg/"
+
+  PROJECTION
+    "init=epsg:31467"
+  END
+
+  LAYER
+    NAME	"gewaesserflaechen"
+    DATA  	"data/frida-1.0.1-shp-joined/gewaesserflaechen"
+    EXTENT	3427433.650000 5789186.610000 3443808.180000 5800377.060000
+    PROJECTION	
+      "init=epsg:31467"
+    END
+    STATUS ON
+    DEBUG 5
+    DUMP TRUE
+    METADATA
+      "wfs_title"	"gewaesserflaechen"
+      "wms_title"	"gewaesserflaechen"
+      "gml_include_items" "all" ## Optional (serves all attributes for layer)
+      "gml_featureid"   "gpShapeID" ## REQUIRED
+    END
+    TYPE	POLYGON
+    CLASS
+      COLOR		39 64 139
+    END #class
+  END #layer
+
+LAYER
+    NAME	"gewaesserlinien"
+    DATA  	"data/frida-1.0.1-shp-joined/gewaesserlinien-joined"
+    EXTENT	 3427000.370000 5789005.030000 3441734.790000 5799515.290000
+    PROJECTION	
+      "init=epsg:31467"
+    END
+    STATUS ON
+    DEBUG 5
+    DUMP TRUE
+    METADATA
+      "wfs_title"	"gewaesserlinien"
+      "wms_title"	"gewaesserlinien"
+      "gml_include_items" "all" ## Optional (serves all attributes for layer)
+      "gml_featureid"   "glshapeid" ## REQUIRED
+    END
+    TYPE	LINE
+    CLASS
+      COLOR		39 64 139
+    END #class
+  END #layer
+
+
+LAYER
+    NAME	"gruenflaechen"
+    DATA  	"data/frida-1.0.1-shp-joined/gruenflaechen-joined"
+    EXTENT	 3427065.200000 5788323.530000 3443999.370000 5800691.660000
+    PROJECTION	
+      "init=epsg:31467"
+    END
+    STATUS ON
+    DEBUG 5
+    DUMP TRUE
+    METADATA
+      "wfs_title"	"gruenflaechen"
+      "wms_title"	"gruenflaechen"
+      "gml_include_items" "all" ## Optional (serves all attributes for layer)
+      "gml_featureid"   "gfshapeid" ## REQUIRED
+    END
+    TYPE	POLYGON
+    CLASS
+      COLOR		124 205 124
+    END #class
+  END #layer
+
+LAYER
+    NAME	"strassen"
+    DATA  	"data/frida-1.0.1-shp-joined/strassen-joined"
+    EXTENT	 3427000.290000 5787594.240000 3444004.000000  5800876.470000
+    PROJECTION	
+      "init=epsg:31467"
+    END
+    STATUS ON
+    DEBUG 5
+    DUMP TRUE
+    METADATA
+      "wfs_title"	"strassen"
+      "wms_title"	"strassen"
+      "gml_include_items" "all" ## Optional (serves all attributes for layer)
+      "gml_featureid"   "strshapeid" ## REQUIRED
+    END
+    TYPE	LINE
+    CLASS
+      COLOR		61 61 61
+    END #class
+  END #layer
+
+LAYER
+    NAME	"poi"
+    DATA  	"data/frida-1.0.1-shp-joined/poi-joined"
+    EXTENT	 3427768.920000 5789224.050000 3442525.110000 5799412.100000
+    PROJECTION	
+      "init=epsg:31467"
+    END
+    STATUS ON
+    DEBUG 5
+    DUMP TRUE
+    METADATA
+      "wfs_title"	"poi"
+      "wms_title"	"poi"
+      "gml_include_items" "all" ## Optional (serves all attributes for layer)
+      "gml_featureid"   "poishapeid" ## REQUIRED
+    END
+    TYPE	POINT
+    CLASS
+      STYLE	
+       SYMBOL "Punkt"
+       COLOR		205 38 38
+       OUTLINECOLOR     0 0 0
+       SIZE		4
+      END #style
+    END #class
+  END #layer
+
+END #map

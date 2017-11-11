@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE session SYSTEM "thuban-0.8.dtd">
+<session xmlns="http://thuban.intevation.org/dtds/thuban-0.8.dtd" title="Frida: Free Vector Geodata Osnabrueck">
+    <fileshapesource filetype="shapefile" id="D277430224" filename="gruenflaechen-joined.shp"/>
+    <fileshapesource filetype="shapefile" id="D278147400" filename="gewaesserflaechen.shp"/>
+    <fileshapesource filetype="shapefile" id="D278162160" filename="gewaesserlinien-joined.shp"/>
+    <fileshapesource filetype="shapefile" id="D278159448" filename="poi-joined.shp"/>
+    <fileshapesource filetype="shapefile" id="D278190552" filename="strassen-joined.shp"/>
+    <filetable filetype="DBF" filename="strassen_typen.dbf" id="D281443512" title="strassen_typen"/>
+    <jointable leftcolumn="strTypID" right="D281443512" title="Join of strassen-joined and strassen_typen" rightcolumn="strTypID" id="D281445536" left="D278190552"/>
+    <derivedshapesource table="D281445536" shapesource="D278190552" id="D278852816"/>
+    <map title="Osnabrueck">
+        <layer shapestore="D277430224" visible="true" stroke="#000000" title="Grünflächen" stroke_width="1" fill="#00ff7f"/>
+        <layer shapestore="D278147400" visible="true" stroke="#000000" title="Seen" stroke_width="1" fill="#3232cc"/>
+        <layer shapestore="D278162160" visible="true" stroke="#3232cc" title="Fließgewässer" stroke_width="1" fill="None"/>
+        <layer shapestore="D278159448" visible="true" stroke="#000000" title="Besondere Punkte" stroke_width="1" fill="None">
+            <classification field="poiTypName" field_type="string">
+                <clnull label="">
+                    <cldata stroke="#000000" stroke_width="1" fill="None"/>
+                </clnull>
+                <clpoint label="" value="Friedhof">
+                    <cldata stroke="#0000ff" stroke_width="1" fill="#0000ff"/>
+                </clpoint>
+                <clpoint label="" value="Kirche/Synagoge/Kloster">
+                    <cldata stroke="#0071ff" stroke_width="1" fill="#0071ff"/>
+                </clpoint>
+                <clpoint label="" value="Klinik/Hospital">
+                    <cldata stroke="#00e2ff" stroke_width="1" fill="#00e2ff"/>
+                </clpoint>
+                <clpoint label="" value="anderer Punkt/Geb�ude">
+                    <cldata stroke="#00ffaa" stroke_width="1" fill="#00ffaa"/>
+                </clpoint>
+                <clpoint label="" value="Aussichtspunkt">
+                    <cldata stroke="#00ff38" stroke_width="1" fill="#00ff38"/>
+                </clpoint>
+                <clpoint label="" value="FH/Uni">
+                    <cldata stroke="#38ff00" stroke_width="1" fill="#38ff00"/>
+                </clpoint>
+                <clpoint label="" value="Parkplatz">
+                    <cldata stroke="#ffe200" stroke_width="1" fill="#ffe200"/>
+                </clpoint>
+                <clpoint label="" value="�ffentl. Geb�ude">
+                    <cldata stroke="#ff7100" stroke_width="1" fill="#ff7100"/>
+                </clpoint>
+                <clpoint label="" value="Schule">
+                    <cldata stroke="#ff0000" stroke_width="1" fill="#ff0000"/>
+                </clpoint>
+                <clpoint label="" value="nicht attributiert">
+                    <cldata stroke="#a9ff00" stroke_width="1" fill="#a9ff00"/>
+                </clpoint>
+            </classification>
+        </layer>
+        <layer shapestore="D278852816" visible="true" stroke="#000000" title="Straßen" stroke_width="1" fill="None">
+            <classification field="strTypName" field_type="string">
+                <clnull label="">
+                    <cldata stroke="#000000" stroke_width="1" fill="None"/>
+                </clnull>
+                <clpoint label="" value="Autobahn">
+                    <cldata stroke="#ff0000" stroke_width="3" fill="#ffff00"/>
+                </clpoint>
+                <clpoint label="Bundesstraße" value="Bundesstrasse">
+                    <cldata stroke="#ffff00" stroke_width="2" fill="#ff0000"/>
+                </clpoint>
+                <clpoint label="Hauptstraße" value="Hauptstrasse">
+                    <cldata stroke="#ffff00" stroke_width="1" fill="#00ff00"/>
+                </clpoint>
+                <clpoint label="Nebenstraße" value="Nebenstrasse">
+                    <cldata stroke="#00ff7f" stroke_width="1" fill="#00ff7f"/>
+                </clpoint>
+                <clpoint label="" value="Weg">
+                    <cldata stroke="#007fff" stroke_width="1" fill="#007fff"/>
+                </clpoint>
+                <clpoint label="Fußgängerzone" value="Fussgaengerzone">
+                    <cldata stroke="#0000ff" stroke_width="1" fill="#0000ff"/>
+                </clpoint>
+                <clpoint label="" value="Fussweg">
+                    <cldata stroke="#00ffff" stroke_width="1" fill="#00ffff"/>
+                </clpoint>
+                <clpoint label="" value="noch nicht attributiert">
+                    <cldata stroke="#7fff00" stroke_width="1" fill="#7fff00"/>
+                </clpoint>
+                <clpoint label="nicht zugeordnet" value="None">
+                    <cldata stroke="#ff7f00" stroke_width="1" fill="#ff7f00"/>
+                </clpoint>
+            </classification>
+        </layer>
+    </map>
+</session>

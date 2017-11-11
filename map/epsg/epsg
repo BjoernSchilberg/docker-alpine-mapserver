@@ -1,0 +1,14 @@
+# WGS 84 lat-lon
+<4326> +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs  <>
+
+# DHDN / 3-degree Gauss-Kruger zone 3
+<31467> +proj=tmerc +lat_0=0 +lon_0=9 +k=1 +x_0=3500000 +y_0=0 +ellps=bessel +datum=potsdam +units=m +no_defs <>
+
+# Transverse Mercator Projection
+<900913> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs <>
+
+# Popular Visualisation CRS / Mercator (deprecated)
+<3785> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs <>
+
+# WGS 84 / Pseudo-Mercator
+<3857> +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs <>

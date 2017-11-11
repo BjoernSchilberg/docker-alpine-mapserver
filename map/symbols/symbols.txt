@@ -1,0 +1,10 @@
+SYMBOLSET
+SYMBOL
+    NAME  "Punkt"
+    TYPE  ellipse
+    POINTS 1 1
+    END
+    FILLED true
+END
+
+END
