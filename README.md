@@ -1,5 +1,7 @@
 # Alpine Docker container for Mapserver
 
+[![](https://dockerbuildbadges.quelltext.eu/status.svg?organization=bjoernschilberg&repository=docker-alpine-mapserver)](https://hub.docker.com/r/bjoernschilberg/docker-alpine-mapserver/)
+
 A minimal Mapserver Docker image based on [Alpine Linux](https://alpinelinux.org/about/) with a complete package index and only 18 MB in size (compressed)!
 
 ## What is Alpine Linux?
