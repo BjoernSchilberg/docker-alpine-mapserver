@@ -1,6 +1,6 @@
 # Alpine Docker container for Mapserver
 
-A minimal Mapserver Docker image based on [Alpine Linux](https://alpinelinux.org/about/) with a complete package index and only 45 MB in size!
+A minimal Mapserver Docker image based on [Alpine Linux](https://alpinelinux.org/about/) with a complete package index and only 18 MB in size (compressed)!
 
 ## What is Alpine Linux?
 Alpine Linux is a Linux distribution built around [musl libc](https://www.musl-libc.org/) and [BusyBox](https://busybox.net/about.html). The pure image is only 5 MB in size and has access to a package repository that is much more complete than other BusyBox based images. 
