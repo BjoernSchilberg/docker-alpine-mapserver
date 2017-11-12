@@ -61,9 +61,14 @@ More infos on [Debugging MapServer](http://mapserver.org/de/optimization/debuggi
 
 ## Logs
 
-Watch container logs with
+Watch container logs with:
 ```
 docker logs <CONTAINER ID>
+```
+
+View the log files being written as they happen:
+```
+docker logs --tail=10 -f <CONTAINER ID>
 ```
 
 ## Tunings
