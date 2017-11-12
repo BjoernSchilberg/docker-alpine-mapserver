@@ -15,7 +15,7 @@ RUN sed -ri \
         "/etc/apache2/httpd.conf"
 RUN echo 'Header set Access-Control-Allow-Origin "*"' >> /etc/apache2/conf.d/default.conf
 
-RUN ln -s /usr/bin/mapserv /var/www/localhost/cgi-bin/mapserv
+RUN cp /usr/bin/mapserv /var/www/localhost/cgi-bin/mapserv
 
 ENV MS_DEBUGLEVEL 5
 ENV MS_ERRORFILE stderr
