@@ -47,14 +47,29 @@ http://localhost:8181/cgi-bin/mapserv?map=/map/frida.map&mode=browse&template=op
 
 Replace the frida.map with the name of your own mapserver [mapfile](http://www.mapserver.org/mapfile/).
 
+## Debugging
+
+You can use the following environment variables (when starting the container)
+to debug it:
+
+* `MS_DEBUGLEVEL`: The debug level 0=off 5=verbose
+* `MS_ERRORFILE`: If you want the debug to something other than STDOUT
+
+More infos on [Debugging MapServer](http://mapserver.org/de/optimization/debugging.html).
+
+## Logs
+
+Watch container logs with
+```
+docker logs <CONTAINER ID>
+```
+
 ## Tunings
 
 You can use the following environment variables (when starting the container)
 to tune it:
-
-* `MS_DEBUGLEVEL`: The debug level 0=off 5=verbose
-* `MS_ERRORFILE`: If you want the debug to something other than STDOUT
 * `MAX_REQUESTS_PER_PROCESS`: To work around memory leaks (defaults to 1000)
+
 
 ## Enter container via shell  
 

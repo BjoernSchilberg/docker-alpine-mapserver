@@ -6,7 +6,7 @@ MAP
   Size		800 800
   SYMBOLSET	"symbols/symbols.txt"
   IMAGETYPE	PNG	
-  CONFIG "MS_ERRORFILE" "/tmp/frida_ms_error.txt"
+  #CONFIG "MS_ERRORFILE" "/tmp/frida_ms_error.txt"
   STATUS ON
   DEBUG 5	
   

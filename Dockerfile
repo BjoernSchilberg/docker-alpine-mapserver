@@ -9,11 +9,15 @@ RUN apk upgrade -U && \
 RUN mkdir -p /run/apache2
 RUN sed -i -e 's/#LoadModule\ cgid_module/LoadModule\ cgid_module/g' /etc/apache2/httpd.conf
 RUN sed -i -e 's/#LoadModule\ cgi_module/LoadModule\ cgi_module/g' /etc/apache2/httpd.conf
+RUN sed -ri \
+        -e 's!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g' \
+        -e 's!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g' \
+        "/etc/apache2/httpd.conf"
 RUN echo 'Header set Access-Control-Allow-Origin "*"' >> /etc/apache2/conf.d/default.conf
 
 RUN ln -s /usr/bin/mapserv /var/www/localhost/cgi-bin/mapserv
 
-ENV MS_DEBUGLEVEL 0
+ENV MS_DEBUGLEVEL 5
 ENV MS_ERRORFILE stderr
 ENV MAX_REQUESTS_PER_PROCESS 1000
 
