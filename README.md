@@ -77,17 +77,24 @@ You can use the following environment variables (when starting the container)
 to tune it:
 * `MAX_REQUESTS_PER_PROCESS`: To work around memory leaks (defaults to 1000)
 
+## Enter a running container via shell
 
-## Enter container via shell  
-
-To enter the container with a shell interface simple switch from `daemon` mode to `interactive` mode.
 ```
-docker run -it -v `pwd`/map:/map mapserver /bin/ash
+docker exec -it <CONTAINER ID> /bin/ash
 ```
-`ash` is the [Almquist Shell](https://en.wikipedia.org/wiki/Almquist_shell), the default shell under [Alpine Linux](https://alpinelinux.org/) provided by [BusyBox](https://busybox.net/about.html).
 
+`ash` is the [Almquist Shell](https://en.wikipedia.org/wiki/Almquist_shell),
+the default shell under [Alpine Linux](https://alpinelinux.org/) provided by
+[BusyBox](https://busybox.net/about.html).
 
 There you'll see the mapped `/map` folder and can use useful cli tools like
 * Mapserver utilities (e.g. `mapserv`): http://www.mapserver.org/utilities/
 * Raster utilities (e.g. `gdalinfo`): http://www.gdal.org/gdal_utilities.html
 * Vector utilities (e.g. `ogr2ogr`): http://www.gdal.org/ogr_utilities.html
+
+## Start and enter a new container via shell  
+
+To enter the container with a shell interface simple switch from `daemon` mode to `interactive` mode.
+```
+docker run -it -v `pwd`/map:/map mapserver /bin/ash
+```
