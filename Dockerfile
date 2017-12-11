@@ -1,6 +1,7 @@
 FROM alpine
 
 LABEL maintainer="bjoern@intevation.de"
+LABEL version="2.0"
 
 RUN apk upgrade -U && \
     apk add mapserver --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
