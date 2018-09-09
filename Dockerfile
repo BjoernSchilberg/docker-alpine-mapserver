@@ -4,6 +4,7 @@ LABEL maintainer="bjoern@intevation.de"
 LABEL version="2.0"
 
 RUN apk upgrade -U && \
+    apk add libressl2.7-libcrypto --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main && \
     apk add mapserver --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
     apk add apache2
 
