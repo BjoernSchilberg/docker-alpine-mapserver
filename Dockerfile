@@ -1,7 +1,7 @@
-FROM alpine
+FROM alpine:3.9
 
 LABEL maintainer="bjoern@intevation.de"
-LABEL version="2.0"
+LABEL version="3.0"
 
 RUN apk upgrade -U && \
     apk add libressl2.7-libcrypto --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main && \
